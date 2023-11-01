@@ -4,7 +4,7 @@ const $$ = document.querySelectorAll.bind(document);
 const player = $(".player");
 const cd = $(".cd");
 
-const PLAYER_STORAGE_KEY = 'F8_PLAYER'
+const PLAYER_STORAGE_KEY = 'D7CF_PLAYER'
 const heading = $("header h2");
 const cdThumb = $(".cd-thumb");
 const audio = $("audio");
@@ -26,36 +26,6 @@ const app = {
                 singer: "Khắc Việt",
                 path: "./assets/music/song1.mp3",
                 image: "./assets/img/img1.jfif",
-            },
-            {
-                name: "I miss you, I'm sorry",
-                singer: "Gracie Abrams",
-                path: "./assets/music/song2.mp3",
-                image: "./assets/img/img2.jfif",
-            },
-            {
-                name: "Always Remember Us This Way",
-                singer: "Lady Gaga",
-                path: "./assets/music/song3.mp3",
-                image: "./assets/img/img3.jfif",
-            },
-            {
-                name: "Enemy",
-                singer: "Imagine Dragons, JID",
-                path: "./assets/music/song4.mp3",
-                image: "./assets/img/img4.jfif",
-            },
-            {
-                name: "Unstoppable ",
-                singer: "Sia",
-                path: "./assets/music/song5.mp3",
-                image: "./assets/img/img5.jpg",
-            },
-            {
-                name: "Stay",
-                singer: "The Kid LAROI, Justin Biebe",
-                path: "./assets/music/song6.mp3",
-                image: "./assets/img/img6.jfif",
             },
 
         ],
