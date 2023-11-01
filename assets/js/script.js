@@ -16,26 +16,32 @@ const ramdomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
 const playlist = $(".playlist");
 const app = {
-        currentIndex: 0,
-        isPlaying: false,
-        isRamdom: false,
-        isLoop: false,
-        config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
-        songs: [{
-                name: "Suy Nghĩ Trong Anh",
-                singer: "Khắc Việt",
-                path: "./assets/music/song1.mp3",
-                image: "./assets/img/img1.jfif",
-            },
+  currentIndex: 0,
+  isPlaying: false,
+  isRamdom: false,
+  isLoop: false,
+  config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
+  songs: [{
+      name: "Suy Nghĩ Trong Anh",
+      singer: "Khắc Việt",
+      path: "./assets/music/song1.mp3",
+      image: "./assets/img/img1.jfif",
+    },
+    {
+      name: "Anh Muốn Quay Lại",
+      singer: "Khắc Việt",
+      path: "./assets/music/song7.mp3",
+      image: "./assets/img/img7.jfif",
+    },
 
-        ],
-        setConfig: function(key, value) {
-            this.config[key] = value;
-            localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
-        },
-        render() {
-            const htmls = this.songs.map((song, index) => {
-                        return `
+  ],
+  setConfig: function (key, value) {
+    this.config[key] = value;
+    localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
+  },
+  render() {
+    const htmls = this.songs.map((song, index) => {
+      return `
             <div class="song ${index === this.currentIndex ? "active" : ""}" data-index ="${index}">
             <div class="thumb " style="background-image: url('${song.image}')">
             </div>
@@ -74,12 +80,9 @@ const app = {
 
     //Xử lý CD quay / dừng
     const cdThumbAnimate = cdThumb.animate(
-      [
-        {
-          transform: "rotate(360deg)",
-        },
-      ],
-      {
+      [{
+        transform: "rotate(360deg)",
+      }, ], {
         duration: 50000,
         iterations: Infinity,
       }
@@ -160,32 +163,32 @@ const app = {
     //Khi Ramdom Song
     ramdomBtn.onclick = function () {
       _this.isRamdom = !_this.isRamdom;
-      _this.setConfig('isRamdom',_this.isRamdom)
+      _this.setConfig('isRamdom', _this.isRamdom)
       ramdomBtn.classList.toggle("active", _this.isRamdom);
     };
     //Khi Repeat Song
     repeatBtn.onclick = function () {
       _this.isLoop = !_this.isLoop;
-      _this.setConfig('isLoop',_this.isLoop) 
+      _this.setConfig('isLoop', _this.isLoop)
       repeatBtn.classList.toggle("active", _this.isLoop);
     };
     // Lắng nghe hành vi click playlist
     playlist.onclick = function (e) {
       const songNode = e.target.closest(".song:not(.active)");
 
-      if (songNode || e.target.closest(".option")){
+      if (songNode || e.target.closest(".option")) {
         //xử lý khi click Song
-        if(songNode){
-        //  console.log(songNode.getAttribute("data-index"))
-         
+        if (songNode) {
+          //  console.log(songNode.getAttribute("data-index"))
+
           _this.currentIndex = Number(songNode.getAttribute("data-index"));
           // _this.currentIndex = Number(songNode.dataset.index);
           _this.loadCurrentSong()
           _this.render();
           audio.play();
-          }
+        }
         //Xu ly khi click option
-        if(e.target.closest(".option")){
+        if (e.target.closest(".option")) {
           alert('hihi')
         }
       }
@@ -289,7 +292,7 @@ const app = {
       });
     }, 300);
   },
-  loadConfig(){
+  loadConfig() {
     this.isRamdom = this.config.isRamdom
     this.isLoop = this.config.isLoop
   },
@@ -309,7 +312,7 @@ const app = {
     // this.hightlightSong();
     // Render playlist
     this.render();
-// 
+    // 
     ramdomBtn.classList.toggle("active", this.isRamdom);
     repeatBtn.classList.toggle("active", this.isLoop);
 
