@@ -69,6 +69,7 @@ const app = {
     this.config[key] = value;
     localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
   },
+
   render() {
     const htmls = this.songs.map((song, index) => {
       return `
@@ -107,7 +108,7 @@ const app = {
   handleEvent() {
     const cdWidth = cd.offsetWidth;
     const _this = this;
-
+    audio.play();
     //Xử lý CD quay / dừng
     const cdThumbAnimate = cdThumb.animate(
       [{
