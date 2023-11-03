@@ -33,6 +33,36 @@ const app = {
       path: "./assets/music/song7.mp3",
       image: "./assets/img/img7.jfif",
     },
+    {
+      name: "đơn giản anh yêu em",
+      singer: "Hồ Quốc Việt",
+      path: "./assets/music/dongiananhyeuem.mp3",
+      image: "./assets/img/dongiananhyeuem.webp",
+    },
+    {
+      name: "Ngoài 30",
+      singer: "Nguyễn Thái Học",
+      path: "./assets/music/ngoai30.mp3",
+      image: "./assets/img/ngoai30.webp",
+    },
+    {
+      name: "Sắp 30",
+      singer: "Trịnh Đình Quang",
+      path: "./assets/music/sap30.mp3",
+      image: "./assets/img/sap30.webp",
+    },
+    {
+      name: "Ngày Mai Em Cươi",
+      singer: "Thành Đạt x Đông Thiên Đức",
+      path: "./assets/music/ngaymaiemcuoi.mp3",
+      image: "./assets/img/ngaymaiemcuoi.webp",
+    },
+    {
+      name: "Rượu Mừng Hóa Người Dưng",
+      singer: "TLong",
+      path: "./assets/music/ruoumunghoanguoidung.mp3",
+      image: "./assets/img/ruoumunghoanguoidung.webp",
+    },
 
   ],
   setConfig: function (key, value) {
