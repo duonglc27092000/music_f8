@@ -52,10 +52,10 @@ const app = {
       image: "./assets/img/sap30.webp",
     },
     {
-      name: "Ngày Mai Em Cươi",
+      name: "Ngày Mai người ta cưới",
       singer: "Thành Đạt x Đông Thiên Đức",
-      path: "./assets/music/ngaymaiemcuoi.mp3",
-      image: "./assets/img/ngaymaiemcuoi.webp",
+      path: "./assets/music/ngaymainguoitacuoi.mp3",
+      image: "./assets/img/ngaymainguoitacuoi.webp",
     },
     {
       name: "Rượu Mừng Hóa Người Dưng",
