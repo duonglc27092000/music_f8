@@ -108,7 +108,6 @@ const app = {
   handleEvent() {
     const cdWidth = cd.offsetWidth;
     const _this = this;
-    audio.play();
     //Xử lý CD quay / dừng
     const cdThumbAnimate = cdThumb.animate(
       [{
