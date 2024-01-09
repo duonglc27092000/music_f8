@@ -14,10 +14,10 @@ html:hover {
 }
 
 html {
-  background: -webkit-linear-gradient(#6db1e6, #29e06f);
-  background: -moz-linear-gradient(#6db1e6, #29e06f);
-  background: -o-linear-gradient(#6db1e6, #29e06f);
-  background: linear-gradient(#6db1e6, #29e06f);
+  background: -webkit-linear-gradient(#0c192c, #173767);
+  background: -moz-linear-gradient(#0c192c, #173767);
+  background: -o-linear-gradient(#0c192c, #173767);
+  background: linear-gradient(#0c192c, #173767);
   /* transform: rotate(36deg); */
   /* transition: background infinite; */
   /* -webkit-animation: swing 3s infinite ease-in-out;
@@ -25,6 +25,8 @@ html {
     -o-animation: swing 3s infinite ease-in-out;
     -ms-transition: swing 3s infinite ease-in-out;*/
   /* animation: swing background 3s infinite; */
+  min-height: 100vh;
+  /* background: #0c192c; */
 }
 
 @keyframes swing {
@@ -68,6 +70,7 @@ html {
   width: 100%;
   max-width: 480px;
   border-bottom: 1px solid #ebebeb;
+  border-radius: 5px;
   z-index: 1;
 }
 
@@ -234,12 +237,11 @@ body {
   align-items: center;
   height: 100%;
   overflow: overflow;
-  /* z-index: ; */
 }
 
 .d1 div,
-.d1 div:before,
-.d1 div:after {
+.d1 div::before,
+.d1 div::after {
   width: 9px;
   height: 3px;
   background: #34da3f;
@@ -252,10 +254,10 @@ body {
   animation-direction: alternate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  /* animation-play-state: paused; */
+  animation-play-state: var(--pseudo, paused);
 }
 
-.d1 div:before {
+.d1 div::before {
   content: "";
   position: absolute;
   transform: translate(11px, 0);
@@ -263,7 +265,7 @@ body {
   animation-name: bar2;
 }
 
-.d1 div:after {
+.d1 div::after {
   content: "";
   position: absolute;
   transform: translate(22px, 0);

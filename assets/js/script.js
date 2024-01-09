@@ -63,6 +63,18 @@ const app = {
       path: "./assets/music/ruoumunghoanguoidung.mp3",
       image: "./assets/img/ruoumunghoanguoidung.webp",
     },
+    {
+      name: "Chỉ còn lại những mùa nhớ",
+      singer: "Hà Anh Tuấn",
+      path: "./assets/music/chiconnuoitiecnhungmuanho.mp3",
+      image: "./assets/img/chiconnuoitiecnhungmuanho.webp",
+    },
+    {
+      name: "chưa quên người yêu cũ",
+      singer: "Hà Nhi",
+      path: "./assets/music/chuaquennguoiyeucu.mp3",
+      image: "./assets/img/chuaquennguoiyeucu.webp",
+    },
 
   ],
   setConfig: function (key, value) {
@@ -130,6 +142,8 @@ const app = {
     // Xử Lý khi Click Play
     playBtn.onclick = function () {
       if (_this.isPlaying) {
+
+
         audio.pause();
       } else {
         audio.play();
@@ -139,6 +153,9 @@ const app = {
     // Khi Song Play
     audio.onplay = function () {
       _this.isPlaying = true;
+      // chuyen dong song nhac khi nhac duoc chay
+      document.querySelector('.d1 div').style.setProperty('--pseudo', 'running')
+
       player.classList.add("playing");
       cdThumbAnimate.play();
     };
@@ -146,6 +163,9 @@ const app = {
     //Khi Song pause
     audio.onpause = function () {
       _this.isPlaying = false;
+      // dung song nhac khi nhac dung
+      document.querySelector('.d1 div').style.setProperty('--pseudo', 'paused')
+
       player.classList.remove("playing");
       cdThumbAnimate.pause();
     };
@@ -233,6 +253,7 @@ const app = {
           if (_this.isPlaying) {
             audio.pause();
           } else {
+
             audio.play();
           }
           break;
@@ -348,6 +369,7 @@ const app = {
     repeatBtn.classList.toggle("active", this.isLoop);
 
   },
+
 };
 
 app.start();
