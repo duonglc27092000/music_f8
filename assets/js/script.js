@@ -19,62 +19,63 @@ const app = {
   currentIndex: 0,
   isPlaying: false,
   isRamdom: false,
+  isMute: false,
   isLoop: false,
   config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
   songs: [{
-      name: "Suy Nghĩ Trong Anh",
-      singer: "Khắc Việt",
-      path: "./assets/music/song1.mp3",
-      image: "./assets/img/img1.jfif",
-    },
-    {
-      name: "Anh Muốn Quay Lại",
-      singer: "Khắc Việt",
-      path: "./assets/music/song7.mp3",
-      image: "./assets/img/img7.jfif",
-    },
-    {
-      name: "đơn giản anh yêu em",
-      singer: "Hồ Quốc Việt",
-      path: "./assets/music/dongiananhyeuem.mp3",
-      image: "./assets/img/dongiananhyeuem.webp",
-    },
-    {
-      name: "Ngoài 30",
-      singer: "Nguyễn Thái Học",
-      path: "./assets/music/ngoai30.mp3",
-      image: "./assets/img/ngoai30.webp",
-    },
-    {
-      name: "Sắp 30",
-      singer: "Trịnh Đình Quang",
-      path: "./assets/music/sap30.mp3",
-      image: "./assets/img/sap30.webp",
-    },
-    {
-      name: "Ngày Mai người ta cưới",
-      singer: "Thành Đạt x Đông Thiên Đức",
-      path: "./assets/music/ngaymainguoitacuoi.mp3",
-      image: "./assets/img/ngaymainguoitacuoi.webp",
-    },
-    {
-      name: "Rượu Mừng Hóa Người Dưng",
-      singer: "TLong",
-      path: "./assets/music/ruoumunghoanguoidung.mp3",
-      image: "./assets/img/ruoumunghoanguoidung.webp",
-    },
-    {
-      name: "Chỉ còn lại những mùa nhớ",
-      singer: "Hà Anh Tuấn",
-      path: "./assets/music/chiconnuoitiecnhungmuanho.mp3",
-      image: "./assets/img/chiconnuoitiecnhungmuanho.webp",
-    },
-    {
-      name: "chưa quên người yêu cũ",
-      singer: "Hà Nhi",
-      path: "./assets/music/chuaquennguoiyeucu.mp3",
-      image: "./assets/img/chuaquennguoiyeucu.webp",
-    },
+    name: "Suy Nghĩ Trong Anh",
+    singer: "Khắc Việt",
+    path: "./assets/music/song1.mp3",
+    image: "./assets/img/img1.jfif",
+  },
+  {
+    name: "Anh Muốn Quay Lại",
+    singer: "Khắc Việt",
+    path: "./assets/music/song7.mp3",
+    image: "./assets/img/img7.jfif",
+  },
+  {
+    name: "đơn giản anh yêu em",
+    singer: "Hồ Quốc Việt",
+    path: "./assets/music/dongiananhyeuem.mp3",
+    image: "./assets/img/dongiananhyeuem.webp",
+  },
+  {
+    name: "Ngoài 30",
+    singer: "Nguyễn Thái Học",
+    path: "./assets/music/ngoai30.mp3",
+    image: "./assets/img/ngoai30.webp",
+  },
+  {
+    name: "Sắp 30",
+    singer: "Trịnh Đình Quang",
+    path: "./assets/music/sap30.mp3",
+    image: "./assets/img/sap30.webp",
+  },
+  {
+    name: "Ngày Mai người ta cưới",
+    singer: "Thành Đạt x Đông Thiên Đức",
+    path: "./assets/music/ngaymainguoitacuoi.mp3",
+    image: "./assets/img/ngaymainguoitacuoi.webp",
+  },
+  {
+    name: "Rượu Mừng Hóa Người Dưng",
+    singer: "TLong",
+    path: "./assets/music/ruoumunghoanguoidung.mp3",
+    image: "./assets/img/ruoumunghoanguoidung.webp",
+  },
+  {
+    name: "Chỉ còn lại những mùa nhớ",
+    singer: "Hà Anh Tuấn",
+    path: "./assets/music/chiconnuoitiecnhungmuanho.mp3",
+    image: "./assets/img/chiconnuoitiecnhungmuanho.webp",
+  },
+  {
+    name: "chưa quên người yêu cũ",
+    singer: "Hà Nhi",
+    path: "./assets/music/chuaquennguoiyeucu.mp3",
+    image: "./assets/img/chuaquennguoiyeucu.webp",
+  },
 
   ],
   setConfig: function (key, value) {
@@ -92,13 +93,12 @@ const app = {
                 <h3 class="title">${song.name}</h3>
                 <p class="author">${song.singer}</p>
             </div>
-            ${
-              index === this.currentIndex
-                ? ` <div class="d1">
+            ${index === this.currentIndex
+          ? ` <div class="d1">
             <div></div>
         </div>`
-                : ""
-            }
+          : ""
+        }
            
             <div class="option">
                 <i class="fas fa-ellipsis-h"></i>
@@ -125,10 +125,10 @@ const app = {
     const cdThumbAnimate = cdThumb.animate(
       [{
         transform: "rotate(360deg)",
-      }, ], {
-        duration: 50000,
-        iterations: Infinity,
-      }
+      },], {
+      duration: 50000,
+      iterations: Infinity,
+    }
     );
     cdThumbAnimate.pause();
     // Xử lý Phóng To / Thu Nhỏ CD
@@ -245,7 +245,6 @@ const app = {
       }
     };
     // Xu ly input Keyboard
-
     document.onkeydown = function (e) {
       switch (e.keyCode) {
         case 32: {
@@ -294,6 +293,12 @@ const app = {
           //Ramdom Song
           _this.isRamdom = !_this.isRamdom;
           ramdomBtn.classList.toggle("active", _this.isRamdom);
+          break;
+        }
+        case 77: {
+          //mute Song
+          _this.isMute = !_this.isMute
+          audio.muted = _this.isMute
           break;
         }
       }
