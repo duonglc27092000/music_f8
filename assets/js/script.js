@@ -25,13 +25,9 @@ const app = {
   songs: [{
     name: "Anh thôi nhân nhượng",
     singer: "Kiều Chi Cover",
-    path: "./assets/music/song1.mp3",
+    path: "./assets/music/s1.mp3",
     image: "./assets/img/i1.png",
   },
-
-
-
-
   ],
   setConfig: function (key, value) {
     this.config[key] = value;
