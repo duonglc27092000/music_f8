@@ -1,6 +1,10 @@
+
+
+
+
+// ----------------------------------------------
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
 const player = $(".player");
 const cd = $(".cd");
 
@@ -16,6 +20,7 @@ const ramdomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
 const playlist = $(".playlist");
 const app = {
+
   currentIndex: 0,
   isPlaying: false,
   isRamdom: false,
@@ -23,10 +28,142 @@ const app = {
   isLoop: false,
   config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
   songs: [{
-    name: "Anh thôi nhân nhượng",
-    singer: "Kiều Chi Cover",
-    path: "./assets/music/s1.mp3",
-    image: "./assets/img/i1.png",
+    name: "AI CHUNG TÌNH ĐƯỢC MÃI",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/AI CHUNG TÌNH ĐƯỢC MÃI dinhtunghuy8765  TRUNG QUÂN COVER  In the Moonlight 2022_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "ÁNH SAO  BẦU TRỜI",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/ÁNH SAO  BẦU TRỜI  Trung Quân x CÁ x TRI  Live at Soul of the forest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "BUỒN KHÔNG THỂ BUÔNG",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/BUỒN KHÔNG THỂ BUÔNG  Trung Quân live at Soul of The Forest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Chia Cách Bình Yên",
+    singer: "Quốc Thiên",
+    path: "./assets/music/Chia Cách Bình Yên  Quốc Thiên live at souloftheforest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "CÔ ĐƠN TRÊN SOFA",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/CÔ ĐƠN TRÊN SOFA  Hồ Ngọc Hà x Tăng Duy Tân  Trung Quân live cover at Soul of The Forest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "HÔM NAY ANH RÂT MÊT",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/HÔM NAY ANH RÂT MÊT  Trung Quân x Nguyễn Văn Chung  Live at Soul of The Forest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "HƠN EM CHỖ NÀO",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/HƠN EM CHỖ NÀO  Viruss x Thuỳ Chi  Trung Quân live cover at Soul of The Forest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "LK Katy Katy  Vì Yêu",
+    singer: "Lân Nhã",
+    path: "./assets/music/LK Katy Katy  Vì Yêu  Lân Nhã live at souloftheforest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Mashup NHỮNG CÂU HỎI KHI SAY  DỪNG YÊU",
+    singer: "TRUNG QUÂN x MYRA TRẦN",
+    path: "./assets/music/Mashup NHỮNG CÂU HỎI KHI SAY  DỪNG YÊU l TRUNG QUÂN x MYRA TRẦN  Live at LULULOLA_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "MỐI TÌNH KHÔNG TÊN",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/MỐI TÌNH KHÔNG TÊN l TRUNG QUÂN x ĐÌNH NGUYỄN x LÊ CHÍ TRUNG  Live cover at LULULOLA_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Một Ngàn Nỗi Đau",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/Một Ngàn Nỗi Đau  TrungQuanSinger live at souloftheforest  St FinoKim0801_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "NGƯỜI LẠ THOÁNG QUA",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/NGƯỜI LẠ THOÁNG QUA  Trung Quân x Đinh Tùng Huy  Live at Soul of the forest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "THUYỀN QUYÊN",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/THUYỀN QUYÊN  Trung Quân x Diệu Kiên  Live cover at La Cà Hát Ca 2023_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "TÌNH SÂU ĐẬM MƯA MỊT MÙ",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/TÌNH SÂU ĐẬM MƯA MỊT MÙ  OST Romance in the Rain x PP Nguyễn  Trung Quân live at Soul of TheForest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "TRÁI TIM BÊN LỀ",
+    singer: "Trung Quân  Bùi Anh Tuấn cover",
+    path: "./assets/music/TRÁI TIM BÊN LỀ  Trung Quân  Bùi Anh Tuấn cover ngẫu hứng theo yêu cầu khán giả tại Mey_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "TỰ TÌNH 2",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/TỰ TÌNH 2  Lâm Nguyên  Trung Quân Cover  souloftheforest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "VẪN NHỚ",
+    singer: "HÀ NHI COVER",
+    path: "./assets/music/VẪN NHỚ  HÀ NHIs.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "YÊU NGƯỜI CÓ ƯỚC MƠ",
+    singer: "TRUNG QUÂN COVER",
+    path: "./assets/music/YÊU NGƯỜI CÓ ƯỚC MƠ  Trung Quân x Bùi Trường Linh  Live cover at Isle of Art_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "AI RỒI CŨNG SẼ KHÁC ",
+    singer: "HÀ NHI COVER",
+    path: "./assets/music/yt1s.com - AI RỒI CŨNG SẼ KHÁC  HÀ NHI  LIVE VERSION AT GIAO LỘ THỜI GIAN_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Dẫu Có Lỗi Lầm",
+    singer: "BÙI CÔNG NAM ft TRUNG QUÂN",
+    path: "./assets/music/yt1s.com - BÙI CÔNG NAM ft TRUNG QUÂN   Dẫu Có Lỗi Lầm  Sáng tác Hồ Hoài Anh  Live in MAY SAI GON_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Lao Tâm Khổ Tứ",
+    singer: "Thanh Hưng",
+    path: "./assets/music/yt1s.com - Lao Tâm Khổ Tứ  Thanh Hưng Official MV_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Xin Lỗi",
+    singer: "Nguyên Hà",
+    path: "./assets/music/yt1s.com - Xin Lỗi  Nguyên Hà live at souloftheforest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
   },
   ],
   setConfig: function (key, value) {
@@ -93,8 +230,6 @@ const app = {
     // Xử Lý khi Click Play
     playBtn.onclick = function () {
       if (_this.isPlaying) {
-
-
         audio.pause();
       } else {
         audio.play();
@@ -109,6 +244,93 @@ const app = {
 
       player.classList.add("playing");
       cdThumbAnimate.play();
+      // Lấy file, audio và canvas element
+      // var fileElm = document.querySelector("#input-file");
+      // var audioElm = document.querySelector("#audio");
+      var canvasElm = document.querySelector("#canvas");
+      canvasElm.width = window.innerWidth;
+      canvasElm.height = window.innerHeight;
+
+      // Thực hiện xử lý khi một file audio được chọn
+      audio.onplay = function () {
+        // Gắn đường source cho audio element với file đầu tiên trong danh sách các file đã chọn
+        // File object thường là 1 array do input type file có thể chấp nhận thuộc tính multple
+        // để chúng ta có thể chọn nhiều hơn một file. URL.createObjectURL sẽ giúp chúng ta tạo ra một
+        // DOMString chứa URL đại diện cho Object được đưa vào. Bạn có thể xem chi tiết tại: https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+        // audioElm.src = URL.createObjectURL(this.files[0]);
+
+        // Tiếp theo, tải file và thực hiện play file đã được chọn
+        // audioElm.load();
+        // audioElm.play();
+
+        // Tiếp, khởi tạo AudioContext
+        var audioContext = new AudioContext();
+        // Khởi tạo AudioContext source
+        var audioContextSrc = audioContext.createMediaElementSource(audio);
+        // Khởi tạo Analyser
+        var audioAnalyser = audioContext.createAnalyser();
+        // Khởi tạo 2D canvas
+        canvasContext = canvasElm.getContext("2d");
+
+        // Kết nối AudioContext source với Analyser
+        audioContextSrc.connect(audioAnalyser);
+        // Kết nối Analyser với AudioDestinationNode
+        audioAnalyser.connect(audioContext.destination);
+
+        // Gán FFT size là 256 cho Analyser
+        // Các bạn có thể xem thêm tại: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize
+        audioAnalyser.fftSize = 256;
+
+        // Lấy dữ liệu tần số từ Analyser
+        // https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/frequencyBinCount
+        var analyserFrequencyLength = audioAnalyser.frequencyBinCount;
+
+        // Khởi tạo một 8-bit unsigned interge array có số lượng phần tử bằng analyserFrequencyLength
+        var frequencyDataArray = new Uint8Array(analyserFrequencyLength);
+
+        // Lấy width và height của canvas
+        var canvasWith = canvasElm.width;
+        var canvasHeight = canvasElm.height;
+
+        // Tính toán barWidth và barHeight
+        var barWidth = (canvasWith / analyserFrequencyLength) * 1.35;
+        var barHeight;
+        var barIndex = 0;
+
+        function renderFrame() {
+          // Thông báo với trình duyệt rằng chúng ta đang chuẩn bị thực hiện một animation với method là như này. Hãy chuẩn bị đi =)
+          // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+          window.requestAnimationFrame(renderFrame);
+
+          // Reset lại barIndex trở về 0
+          barIndex = 0;
+
+          // Điền dữ liệu tần số vào mảng
+          audioAnalyser.getByteFrequencyData(frequencyDataArray);
+
+          // Vẽ một hình chữ nhật với nền màu đen
+          canvasContext.fillStyle = "rgba(0, 0, 0, 0.2";
+
+          canvasContext.fillRect(0, 0, canvasWith, canvasHeight);
+
+          // Chạy lần lượt từ 0 đến hết dữ liệu tần số của Analyser
+          for (var i = 0; i < analyserFrequencyLength; i++) {
+            barHeight = frequencyDataArray[i];
+            // Tạo màu cho thanh bar
+            var rgbRed = barHeight + (25 * (i / analyserFrequencyLength));
+            var rgbGreen = 250 * (i / analyserFrequencyLength);
+            var rgbBlue = 50;
+
+            // Điền màu và vẽ bar
+            canvasContext.fillStyle = "rgb(" + rgbRed + ", " + rgbGreen + ", " + rgbBlue + ")";
+            canvasContext.fillRect(barIndex, (canvasHeight - barHeight), barWidth, barHeight);
+
+            barIndex += (barWidth + 1);
+          }
+        }
+        // Gọi method để render vào canvas
+        renderFrame();
+      }
     };
 
     //Khi Song pause
@@ -191,7 +413,7 @@ const app = {
         }
         //Xu ly khi click option
         if (e.target.closest(".option")) {
-          alert('hihi')
+          alert('Đang phát triển')
         }
       }
     };
@@ -329,3 +551,5 @@ const app = {
 };
 
 app.start();
+
+

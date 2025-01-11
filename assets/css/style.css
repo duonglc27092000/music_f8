@@ -14,10 +14,11 @@ html:hover {
 }
 
 html {
-  background: -webkit-linear-gradient(#0c192c, #173767);
+  /* background: -webkit-linear-gradient(#0c192c, #173767);
   background: -moz-linear-gradient(#0c192c, #173767);
   background: -o-linear-gradient(#0c192c, #173767);
-  background: linear-gradient(#0c192c, #173767);
+  background: linear-gradient(#0c192c, #000); */
+  background: #000;
   /* transform: rotate(36deg); */
   /* transition: background infinite; */
   /* -webkit-animation: swing 3s infinite ease-in-out;
@@ -255,6 +256,8 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: var(--pseudo, paused);
+  /* animation-play-state:  paused; */
+  /* animation-play-state:  running; */
 }
 
 .d1 div::before {
@@ -358,4 +361,14 @@ body {
     box-shadow: 0 -3px 0 #34da3f, 0 -6px 0 #3cb9d5, 0 -9px 0 #ca638a,
       0 -12px 0 #ff3b77;
   }
+}
+
+#canvas {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
 }
