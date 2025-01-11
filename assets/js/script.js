@@ -130,12 +130,6 @@ const app = {
     image: "./assets/img/i1.jpg",
   },
   {
-    name: "",
-    singer: "TRUNG QUÂN COVER",
-    path: "./assets/music/",
-    image: "./assets/img/i1.jpg",
-  },
-  {
     name: "YÊU NGƯỜI CÓ ƯỚC MƠ",
     singer: "TRUNG QUÂN COVER",
     path: "./assets/music/YÊU NGƯỜI CÓ ƯỚC MƠ  Trung Quân x Bùi Trường Linh  Live cover at Isle of Art_320kbps.mp3",
