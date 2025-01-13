@@ -496,6 +496,7 @@ const app = {
     this.loadCurrentSong();
   },
   loadCurrentSong() {
+    document.title = this.currentSong.name;
     heading.textContent = this.currentSong.name;
     cdThumb.style.background = `url('${this.currentSong.image}')`;
     audio.src = this.currentSong.path;
