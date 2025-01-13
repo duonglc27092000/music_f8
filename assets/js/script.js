@@ -159,6 +159,24 @@ const app = {
     path: "./assets/music/yt1s.com - Xin Lỗi  Nguyên Hà live at souloftheforest_320kbps.mp3",
     image: "./assets/img/i1.jpg",
   },
+  {
+    name: "Mơ Băng Giá",
+    singer: "Noo Phước Thịnh COVER",
+    path: "./assets/music/Noo Phước Thịnh COVER Cơn Mơ Băng Giá LIVE  Mây in the Nest_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Không Bằng",
+    singer: "Hà Nhi",
+    path: "./assets/music/Hà Nhi  Không Bằng  Khi người buông tay nhưng em vẫn còn yêu_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
+  {
+    name: "Vì Em Chưa Bao Giờ Khóc",
+    singer: "Hà Nhi",
+    path: "./assets/music/Hà Nhi  Vì Em Chưa Bao Giờ Khóc  AC Xuân Tài I Official Music Video_320kbps.mp3",
+    image: "./assets/img/i1.jpg",
+  },
   ],
   setConfig: function (key, value) {
     this.config[key] = value;
